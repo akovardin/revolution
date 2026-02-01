@@ -3,15 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://did0e4yo4vb8w" path="res://assets/board.jpg" id="1_hddm4"]
 [ext_resource type="Script" uid="uid://c5u1riw6laknx" path="res://src/Playground.cs" id="1_osidk"]
 [ext_resource type="Texture2D" uid="uid://cf434quk172by" path="res://assets/player.png" id="2_kddj0"]
+[ext_resource type="Script" uid="uid://2aqxqqwhfr30" path="res://src/components/Board.cs" id="3_j30dx"]
 [ext_resource type="Texture2D" uid="uid://dwkruryy5x3ip" path="res://assets/revolution.png" id="3_q8s1k"]
 [ext_resource type="Texture2D" uid="uid://5cgkvvmi8xr0" path="res://assets/dice1.png" id="4_q8s1k"]
+[ext_resource type="Script" uid="uid://yvf53j63eco4" path="res://src/components/Title.cs" id="5_2ilni"]
 [ext_resource type="Texture2D" uid="uid://qp6hc8si4k4e" path="res://assets/dice2.png" id="5_o6wi6"]
+[ext_resource type="Script" uid="uid://c3jk4u1ugt8tm" path="res://src/components/Players.cs" id="6_d3jfy"]
 [ext_resource type="Texture2D" uid="uid://tu6rg3ndy2" path="res://assets/dice3.png" id="6_emj6c"]
 [ext_resource type="FontFile" uid="uid://bgc6b2rd6n5m2" path="res://assets/Pattaya/Pattaya-Regular.ttf" id="7_emj6c"]
-[ext_resource type="Script" uid="uid://58oce1sfloo0" path="res://src/Dice.cs" id="7_rlvb3"]
 [ext_resource type="Texture2D" uid="uid://dtobw720dc1ui" path="res://assets/dice4.png" id="8_x1amm"]
 [ext_resource type="Texture2D" uid="uid://cx8vyevhj1e20" path="res://assets/dice5.png" id="9_2bfhc"]
+[ext_resource type="PackedScene" uid="uid://bliysj2jsdv0w" path="res://scenes/player.tscn" id="9_j30dx"]
 [ext_resource type="Texture2D" uid="uid://thehqg1kcads" path="res://assets/dice6.png" id="10_osidk"]
+[ext_resource type="Script" uid="uid://58oce1sfloo0" path="res://src/components/Dice.cs" id="15_x2tju"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_osidk"]
 animations = [{
@@ -43,19 +47,22 @@ animations = [{
 script = ExtResource("1_osidk")
 
 [node name="Board" type="Sprite2D" parent="." unique_id=483316285]
-position = Vector2(808.888, 541.5)
-scale = Vector2(0.56305265, 0.56239116)
+position = Vector2(841.91156, 544.3342)
+scale = Vector2(0.6252148, 0.62410414)
 texture = ExtResource("1_hddm4")
+script = ExtResource("3_j30dx")
 
 [node name="Title" type="Sprite2D" parent="." unique_id=1757596969]
-position = Vector2(1704, 88)
+position = Vector2(1796, 81)
 texture = ExtResource("3_q8s1k")
+script = ExtResource("5_2ilni")
 
 [node name="Players" type="VBoxContainer" parent="." unique_id=1005578373]
-offset_left = 1552.0
-offset_top = 288.0
-offset_right = 1725.0
-offset_bottom = 725.0
+offset_left = 1672.0
+offset_top = 281.0
+offset_right = 1845.0
+offset_bottom = 718.0
+script = ExtResource("6_d3jfy")
 
 [node name="MarginContainer" type="MarginContainer" parent="Players" unique_id=1505131880]
 layout_mode = 2
@@ -78,15 +85,19 @@ theme_override_fonts/font = ExtResource("7_emj6c")
 theme_override_font_sizes/font_size = 28
 text = "Артем"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Players" unique_id=1191491568]
+[node name="MarginContainer2" type="MarginContainer" parent="Players" unique_id=1266171822]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Players/MarginContainer2" unique_id=1191491568]
 layout_mode = 2
 
-[node name="player1" type="Sprite2D" parent="Players/HBoxContainer" unique_id=1636415911]
+[node name="player1" type="Sprite2D" parent="Players/MarginContainer2/HBoxContainer" unique_id=1636415911]
 modulate = Color(0.96862745, 0.6117647, 0.14509805, 1)
 position = Vector2(30, 20)
 texture = ExtResource("2_kddj0")
 
-[node name="Label" type="Label" parent="Players/HBoxContainer" unique_id=1069080820]
+[node name="Label" type="Label" parent="Players/MarginContainer2/HBoxContainer" unique_id=1069080820]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.09019608, 0.039215688, 0.039215688, 1)
@@ -112,10 +123,8 @@ modulate = Color(0.39607844, 0.79607844, 0.5294118, 1)
 position = Vector2(3, 266)
 texture = ExtResource("2_kddj0")
 
-[node name="Player" type="Sprite2D" parent="." unique_id=690718088]
-modulate = Color(0.5294118, 0.5529412, 0.9764706, 1)
-position = Vector2(78, 963)
-texture = ExtResource("2_kddj0")
+[node name="Player" parent="." unique_id=969129619 instance=ExtResource("9_j30dx")]
+position = Vector2(50, 1024)
 
 [node name="Dice1" type="Sprite2D" parent="." unique_id=887843949]
 visible = false
@@ -143,8 +152,8 @@ position = Vector2(1808, 960)
 texture = ExtResource("10_osidk")
 
 [node name="Dice" type="Node2D" parent="." unique_id=1872957355]
-position = Vector2(1699, 876)
-script = ExtResource("7_rlvb3")
+position = Vector2(1786, 936)
+script = ExtResource("15_x2tju")
 
 [node name="Animation" type="AnimatedSprite2D" parent="Dice" unique_id=1436147751]
 sprite_frames = SubResource("SpriteFrames_osidk")
