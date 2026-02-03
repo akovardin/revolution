@@ -4,6 +4,9 @@ using System;
 public partial class Dice : Node2D {
     private AnimatedSprite2D animation;
 
+    [Signal]
+    public delegate void DiceDropedEventHandler(int n);
+
     public override void _Ready() {
         var vp = GetViewportRect();
         var vwidth = vp.Size.X;
@@ -29,11 +32,11 @@ public partial class Dice : Node2D {
     }
 
     public void Drop() {
-        var n = GD.RandRange(1, 6);
+        var n = GD.RandRange(1, 2);
+        animation.Frame = n-1; 
+
         GD.Print(n);
 
-        animation.Frame = n-1;
-
-        // publish to channel
+        EmitSignal(SignalName.DiceDroped, n);
     }
 }
