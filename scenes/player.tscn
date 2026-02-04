@@ -16,3 +16,4 @@ texture = ExtResource("1_g2els")
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="." unique_id=11648937]
 position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_j30dx")
+disabled = true
