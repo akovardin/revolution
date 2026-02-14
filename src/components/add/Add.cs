@@ -1,10 +1,10 @@
 using Godot;
 using System;
 
-public partial class AddPlayer : Button {
+public partial class Add : Button {
 
     [Signal]
-    public delegate void AddEventHandler();
+    public delegate void AppendEventHandler();
 
     override public void _Ready() {
         Pressed += OnPressed;
@@ -13,6 +13,6 @@ public partial class AddPlayer : Button {
     private void OnPressed() {
         GD.Print("on pressed");
 
-        EmitSignal(SignalName.Add);
+        EmitSignal(SignalName.Append);
     }
 }

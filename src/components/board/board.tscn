@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dad607hw4gwvf"]
+
+[ext_resource type="Texture2D" uid="uid://did0e4yo4vb8w" path="res://assets/board.jpg" id="1_7es6o"]
+[ext_resource type="Script" uid="uid://2aqxqqwhfr30" path="res://src/components/board/Board.cs" id="2_ms0r8"]
+
+[node name="Board" type="Sprite2D" unique_id=1938550118]
+scale = Vector2(0.6252148, 0.62410414)
+texture = ExtResource("1_7es6o")
+script = ExtResource("2_ms0r8")

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://il07x608qkhp"]
+
+[ext_resource type="Script" uid="uid://vym2leu7v1v4" path="res://src/components/list/List.cs" id="1_phgq6"]
+[ext_resource type="Texture2D" uid="uid://cf434quk172by" path="res://assets/player.png" id="2_pb4nh"]
+[ext_resource type="FontFile" uid="uid://bgc6b2rd6n5m2" path="res://assets/Pattaya/Pattaya-Regular.ttf" id="3_oi7bj"]
+
+[node name="List" type="VBoxContainer" unique_id=1090520545]
+offset_left = 1672.0
+offset_top = 281.0
+offset_right = 1845.0
+offset_bottom = 718.0
+script = ExtResource("1_phgq6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1143632578]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer" unique_id=432890522]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="player1" type="Sprite2D" parent="MarginContainer/HBoxContainer2" unique_id=1775042383]
+modulate = Color(0.96862745, 0.6117647, 0.14509805, 1)
+position = Vector2(30, 20)
+texture = ExtResource("2_pb4nh")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer2" unique_id=435659365]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.09019608, 0.039215688, 0.039215688, 1)
+theme_override_fonts/font = ExtResource("3_oi7bj")
+theme_override_font_sizes/font_size = 28
+text = "Артем"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1827243891]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2" unique_id=400603140]
+layout_mode = 2
+
+[node name="player1" type="Sprite2D" parent="MarginContainer2/HBoxContainer" unique_id=367544183]
+modulate = Color(0.96862745, 0.6117647, 0.14509805, 1)
+position = Vector2(30, 20)
+texture = ExtResource("2_pb4nh")
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer" unique_id=108338927]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.09019608, 0.039215688, 0.039215688, 1)
+theme_override_fonts/font = ExtResource("3_oi7bj")
+theme_override_font_sizes/font_size = 28
+text = "Артем"
+
+[node name="player2" type="Sprite2D" parent="." unique_id=35970308]
+visible = false
+modulate = Color(0.94509804, 0.2627451, 0.2627451, 1)
+position = Vector2(3, 92)
+texture = ExtResource("2_pb4nh")
+
+[node name="player3" type="Sprite2D" parent="." unique_id=1998275760]
+visible = false
+modulate = Color(0.5294118, 0.5529412, 0.9764706, 1)
+position = Vector2(3, 179)
+texture = ExtResource("2_pb4nh")
+
+[node name="player4" type="Sprite2D" parent="." unique_id=1482984729]
+visible = false
+modulate = Color(0.39607844, 0.79607844, 0.5294118, 1)
+position = Vector2(3, 266)
+texture = ExtResource("2_pb4nh")

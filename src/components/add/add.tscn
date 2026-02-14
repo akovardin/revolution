@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dmqn7me6wkya6"]
+
+[ext_resource type="Script" uid="uid://bwb64vhr1ngm2" path="res://src/components/add/Add.cs" id="1_5qg76"]
+
+[node name="Add" type="Button" unique_id=1297588071]
+offset_left = 1728.0
+offset_top = 776.0
+offset_right = 1840.0
+offset_bottom = 824.0
+text = "Connect"
+script = ExtResource("1_5qg76")

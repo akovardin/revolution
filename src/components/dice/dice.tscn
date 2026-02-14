@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://5dk0imyjb0hm"]
+
+[ext_resource type="Script" uid="uid://58oce1sfloo0" path="res://src/components/dice/Dice.cs" id="1_p6hxo"]
+[ext_resource type="Texture2D" uid="uid://5cgkvvmi8xr0" path="res://assets/dice1.png" id="2_1jsub"]
+[ext_resource type="Texture2D" uid="uid://qp6hc8si4k4e" path="res://assets/dice2.png" id="3_gfj5g"]
+[ext_resource type="Texture2D" uid="uid://tu6rg3ndy2" path="res://assets/dice3.png" id="4_ubbsa"]
+[ext_resource type="Texture2D" uid="uid://dtobw720dc1ui" path="res://assets/dice4.png" id="5_vdxml"]
+[ext_resource type="Texture2D" uid="uid://cx8vyevhj1e20" path="res://assets/dice5.png" id="6_c75rn"]
+[ext_resource type="Texture2D" uid="uid://thehqg1kcads" path="res://assets/dice6.png" id="7_meep2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osidk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1jsub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gfj5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ubbsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vdxml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c75rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_meep2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Dice" type="Node2D" unique_id=1921275557]
+script = ExtResource("1_p6hxo")
+
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1988713287]
+sprite_frames = SubResource("SpriteFrames_osidk")

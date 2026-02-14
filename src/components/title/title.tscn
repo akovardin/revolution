@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://chl72ub7xo4nb"]
+
+[ext_resource type="Texture2D" uid="uid://dwkruryy5x3ip" path="res://assets/revolution.png" id="1_xtief"]
+[ext_resource type="Script" uid="uid://yvf53j63eco4" path="res://src/components/title/Title.cs" id="2_6mtww"]
+
+[node name="Title" type="Sprite2D" unique_id=609325253]
+texture = ExtResource("1_xtief")
+script = ExtResource("2_6mtww")

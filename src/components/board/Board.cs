@@ -16,10 +16,6 @@ public partial class Board : Sprite2D {
     private Player player;
 
     public override void _Ready() {
-        dice = GetNode<Dice>("../Dice");
-        player = GetNode<Player>("../Player");
-
-
         var vp = GetViewportRect();
         var vwidth = vp.Size.X;
         var vheight = vp.Size.Y;

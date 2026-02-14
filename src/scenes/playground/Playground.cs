@@ -7,8 +7,8 @@ public partial class Playground : Node2D {
     private Dice dice;
     // private Player player;
     private Board board;
-    private PlayerList playerList;
-    private AddPlayer addPlayer;
+    private List list;
+    private Add add;
     private Array<Player> players = new Array<Player>();
     private int currentPlayer = 0;
 
@@ -17,11 +17,11 @@ public partial class Playground : Node2D {
         // player = GetNode<Player>("Player");
         board = GetNode<Board>("Board");
 
-        playerList = GetNode<PlayerList>("PlayerList");
-        addPlayer = GetNode<AddPlayer>("AddPlayer");
+        list = GetNode<List>("List");
+        add = GetNode<Add>("Add");
 
         dice.Connect(Dice.SignalName.DiceDroped, new Callable(this, MethodName.OnDiceDropedEvent));
-        addPlayer.Connect(AddPlayer.SignalName.Add, new Callable(this, MethodName.OnAddPlayerEvent));
+        add.Connect(Add.SignalName.Append, new Callable(this, MethodName.OnAddPlayerEvent));
     }
 
     public void OnDiceDropedEvent(int n) {
@@ -40,7 +40,7 @@ public partial class Playground : Node2D {
         // playerList.Add(player); // добавляем пользователя в список
         // спавним нового игрока рядом с доской
 
-        var scene = GD.Load<PackedScene>("res://scenes/player.tscn");
+        var scene = GD.Load<PackedScene>("res://src/components/player/player.tscn");
         var instance = scene.Instantiate();
 
         AddChild(instance);

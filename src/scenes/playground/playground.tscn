@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://qy84acletpcw"]
+
+[ext_resource type="Script" uid="uid://c5u1riw6laknx" path="res://src/scenes/playground/Playground.cs" id="1_fntx7"]
+[ext_resource type="PackedScene" uid="uid://dad607hw4gwvf" path="res://src/components/board/board.tscn" id="2_laayb"]
+[ext_resource type="PackedScene" uid="uid://chl72ub7xo4nb" path="res://src/components/title/title.tscn" id="3_0tgao"]
+[ext_resource type="PackedScene" uid="uid://il07x608qkhp" path="res://src/components/list/list.tscn" id="5_bv52u"]
+[ext_resource type="PackedScene" uid="uid://bliysj2jsdv0w" path="res://src/components/player/player.tscn" id="9_4wepl"]
+[ext_resource type="Texture2D" uid="uid://5cgkvvmi8xr0" path="res://assets/dice1.png" id="10_dyl36"]
+[ext_resource type="Texture2D" uid="uid://tu6rg3ndy2" path="res://assets/dice3.png" id="11_j2sq4"]
+[ext_resource type="Texture2D" uid="uid://dtobw720dc1ui" path="res://assets/dice4.png" id="12_n5yrj"]
+[ext_resource type="Texture2D" uid="uid://cx8vyevhj1e20" path="res://assets/dice5.png" id="13_p2bvg"]
+[ext_resource type="Texture2D" uid="uid://thehqg1kcads" path="res://assets/dice6.png" id="14_ja3x6"]
+[ext_resource type="PackedScene" uid="uid://5dk0imyjb0hm" path="res://src/components/dice/dice.tscn" id="14_q4obo"]
+[ext_resource type="PackedScene" uid="uid://dmqn7me6wkya6" path="res://src/components/add/add.tscn" id="15_q4obo"]
+
+[node name="Playground" type="Node2D" unique_id=60332609]
+script = ExtResource("1_fntx7")
+
+[node name="Board" parent="." unique_id=1938550118 instance=ExtResource("2_laayb")]
+position = Vector2(841.91156, 544.3342)
+
+[node name="Title" parent="." unique_id=609325253 instance=ExtResource("3_0tgao")]
+position = Vector2(1796, 81)
+
+[node name="List" parent="." unique_id=1090520545 instance=ExtResource("5_bv52u")]
+
+[node name="Player" parent="." unique_id=969129619 instance=ExtResource("9_4wepl")]
+visible = false
+position = Vector2(376, 960)
+
+[node name="Dice1" type="Sprite2D" parent="." unique_id=887843949]
+visible = false
+position = Vector2(1584, 856)
+texture = ExtResource("10_dyl36")
+
+[node name="Dice3" type="Sprite2D" parent="." unique_id=1950732291]
+visible = false
+position = Vector2(1808, 856)
+texture = ExtResource("11_j2sq4")
+
+[node name="Dice4" type="Sprite2D" parent="." unique_id=709112622]
+visible = false
+position = Vector2(1584, 960)
+texture = ExtResource("12_n5yrj")
+
+[node name="Dice5" type="Sprite2D" parent="." unique_id=456901306]
+visible = false
+position = Vector2(1696, 960)
+texture = ExtResource("13_p2bvg")
+
+[node name="Dice6" type="Sprite2D" parent="." unique_id=1196483868]
+visible = false
+position = Vector2(1808, 960)
+texture = ExtResource("14_ja3x6")
+
+[node name="Dice" parent="." unique_id=1921275557 instance=ExtResource("14_q4obo")]
+position = Vector2(1786, 936)
+
+[node name="Add" parent="." unique_id=1297588071 instance=ExtResource("15_q4obo")]

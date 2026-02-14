@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerList : VBoxContainer {
+public partial class List : VBoxContainer {
     public override void _Ready() {
         var vp = GetViewportRect();
         var vwidth = vp.Size.X;
