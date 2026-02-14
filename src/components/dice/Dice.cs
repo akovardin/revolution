@@ -35,8 +35,6 @@ public partial class Dice : Node2D {
         var n = GD.RandRange(1, 2);
         animation.Frame = n-1; 
 
-        GD.Print(n);
-
         EmitSignal(SignalName.DiceDroped, n);
     }
 }

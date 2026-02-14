@@ -20,15 +20,14 @@ public partial class Board : Sprite2D {
         var vwidth = vp.Size.X;
         var vheight = vp.Size.Y;
 
-
-
         Points[0] = new Point(new Vector2((vwidth / 2 - 950) + 135, vheight / 2 + 460));
         Points[1] = new Point(new Vector2((vwidth / 2 - 950) + 270, vheight / 2 + 460));
         Points[2] = new Point(new Vector2((vwidth / 2 - 950) + 405, vheight / 2 + 460));
         Points[3] = new Point(new Vector2((vwidth / 2 - 950) + 540, vheight / 2 + 460));
         Points[4] = new Point(new Vector2((vwidth / 2 - 950) + 675, vheight / 2 + 460));
         Points[5] = new Point(new Vector2((vwidth / 2 - 950) + 810, vheight / 2 + 460));
-        
+
+        // нужно разметить все ячейки
         
         GlobalPosition = new Vector2((vwidth / 2 - 150), vheight / 2);
     }
