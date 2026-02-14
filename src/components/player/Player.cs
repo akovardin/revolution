@@ -3,9 +3,12 @@ using System;
 using System.Reflection.Metadata;
 
 public partial class Player : CharacterBody2D {
+    [Export]
+    public String color;
+    public int cell;
+
     private Vector2 target; 
     private Timer timer;
-    public int Cell;
 
     public override void _Ready() {
         // timer = new Timer();
@@ -38,6 +41,6 @@ public partial class Player : CharacterBody2D {
 
     public void Go(Vector2 point, int n) {
         target = point;
-        Cell += n;
+        cell += n;
     }
 }

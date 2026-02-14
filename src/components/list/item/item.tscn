@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://mkkw5w0p3iyq"]
+
+[ext_resource type="Texture2D" uid="uid://cf434quk172by" path="res://assets/player.png" id="1_gxslc"]
+[ext_resource type="Script" uid="uid://codpkhvy0mt8n" path="res://src/components/list/item/Item.cs" id="1_h8olr"]
+[ext_resource type="FontFile" uid="uid://bgc6b2rd6n5m2" path="res://assets/Pattaya/Pattaya-Regular.ttf" id="2_h8olr"]
+
+[node name="Item" type="MarginContainer" unique_id=185397365]
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_h8olr")
+
+[node name="Container" type="HBoxContainer" parent="." unique_id=1094195185]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Player" type="Sprite2D" parent="Container" unique_id=488202979]
+modulate = Color(0.96862745, 0.6117647, 0.14509805, 1)
+position = Vector2(30, 20)
+texture = ExtResource("1_gxslc")
+
+[node name="Label" type="Label" parent="Container" unique_id=1795368262]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.09019608, 0.039215688, 0.039215688, 1)
+theme_override_fonts/font = ExtResource("2_h8olr")
+theme_override_font_sizes/font_size = 28
+text = "Артем"

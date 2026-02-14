@@ -14,7 +14,6 @@ public partial class Playground : Node2D {
 
     override public void _Ready() {
         dice = GetNode<Dice>("Dice");
-        // player = GetNode<Player>("Player");
         board = GetNode<Board>("Board");
 
         list = GetNode<List>("List");
@@ -26,26 +25,40 @@ public partial class Playground : Node2D {
 
     public void OnDiceDropedEvent(int n) {
         // player.Go(board.Points[player.Cell + (n-1)].point, n);
+        GD.Print(currentPlayer);
+        GD.Print(players[currentPlayer].cell + (n-1));
 
-        players[currentPlayer].Go(board.Points[players[currentPlayer].Cell + (n-1)].point, n);
+        players[currentPlayer].Go(board.Points[players[currentPlayer].cell + (n-1)].point, n);
         currentPlayer++; // этот счетчик должен ходить по кругу
-        // проверяем есть ли точка интереса в этом месте
+        if (currentPlayer >= players.Count) {
+            currentPlayer = 0;
+        }
     }
 
     public void OnAddPlayerEvent() {
-        // проверяем есть ли точка интереса в новом месте
-
         GD.Print("AddPlayerEvent");
 
         // playerList.Add(player); // добавляем пользователя в список
         // спавним нового игрока рядом с доской
 
-        var scene = GD.Load<PackedScene>("res://src/components/player/player.tscn");
-        var instance = scene.Instantiate();
+        // выбор цвета по порядку
+        var color = "red";
 
-        AddChild(instance);
+        var playerScene = GD.Load<PackedScene>("res://src/components/player/player.tscn");
+        var player = (Player)playerScene.Instantiate();
+        player.color = color;
+
+        // добавляем рядом с доской
+        AddChild(player);
 
         // добавляем игрока в массив чтоб чтоб игрок ходил
-        players.Add((Player)instance);
+        players.Add(player);
+
+        var itemScene = GD.Load<PackedScene>("res://src/components/list/item/item.tscn");
+        var item = (Item)itemScene.Instantiate();
+        item.name = "Player123"; // имя генерируем случайно
+        item.color = color;
+
+        list.AddChild(item);
     }
 }
