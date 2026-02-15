@@ -30,10 +30,14 @@ public partial class Playground : Node2D {
 
     public void OnDiceDropedEvent(int n) {
         // player.Go(board.Points[player.Cell + (n-1)].point, n);
-        GD.Print(currentPlayer);
-        GD.Print(players[currentPlayer].cell + (n-1));
+        var point = players[currentPlayer].cell + (n-1);
 
-        players[currentPlayer].Go(board.Points[players[currentPlayer].cell + (n-1)].point, n);
+        GD.Print(currentPlayer);
+        GD.Print(point);
+        GD.Print(board.Points[point].point);
+
+
+        players[currentPlayer].Go(board.Points[point].point, n);
         currentPlayer++; // этот счетчик должен ходить по кругу
         if (currentPlayer >= players.Count) {
             currentPlayer = 0;

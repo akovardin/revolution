@@ -32,7 +32,7 @@ public partial class Dice : Node2D {
     }
 
     public void Drop() {
-        var n = GD.RandRange(1, 2);
+        var n = GD.RandRange(1, 6);
         animation.Frame = n-1; 
 
         EmitSignal(SignalName.DiceDroped, n);
