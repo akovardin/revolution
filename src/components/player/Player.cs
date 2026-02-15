@@ -11,18 +11,13 @@ public partial class Player : CharacterBody2D {
     private Timer timer;
 
     public override void _Ready() {
-        // timer = new Timer();
-        // AddChild(timer);
-        // timer.WaitTime = 3;
-        // timer.Timeout += this.Go;
-        // timer.Start();
-
         var vp = GetViewportRect();
         var vwidth = vp.Size.X;
         var vheight = vp.Size.Y;
 
         // стартовая позиция
         GlobalPosition = new Vector2((vwidth / 2 - 950), vheight / 2 + 460);
+        GetNode<Sprite2D>("PlayerSprite").Modulate = Colors.Convert(color);
     }
 
     public override void _PhysicsProcess(double delta) {

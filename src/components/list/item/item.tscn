@@ -10,12 +10,17 @@ script = ExtResource("1_h8olr")
 
 [node name="Container" type="HBoxContainer" parent="." unique_id=1094195185]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/separation = 4
 
 [node name="Player" type="Sprite2D" parent="Container" unique_id=488202979]
 modulate = Color(0.96862745, 0.6117647, 0.14509805, 1)
 position = Vector2(30, 20)
 texture = ExtResource("1_gxslc")
+
+[node name="Margin" type="MarginContainer" parent="Container" unique_id=2118764612]
+layout_mode = 2
+theme_override_constants/margin_left = 60
 
 [node name="Label" type="Label" parent="Container" unique_id=1795368262]
 layout_mode = 2

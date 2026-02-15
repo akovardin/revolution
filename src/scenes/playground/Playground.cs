@@ -12,6 +12,11 @@ public partial class Playground : Node2D {
     private Array<Player> players = new Array<Player>();
     private int currentPlayer = 0;
 
+    private Array<String> names = ["Артем", "Николай", "Светлана", "Екатерина"];
+    private Array<String> colors = ["red", "green", "blue", "orange"];
+
+    private Random random = new Random();
+
     override public void _Ready() {
         dice = GetNode<Dice>("Dice");
         board = GetNode<Board>("Board");
@@ -38,11 +43,14 @@ public partial class Playground : Node2D {
     public void OnAddPlayerEvent() {
         GD.Print("AddPlayerEvent");
 
-        // playerList.Add(player); // добавляем пользователя в список
-        // спавним нового игрока рядом с доской
+        // максимальное кол-во игроков
+        if (players.Count >= 4) {
+            return;
+        }
 
         // выбор цвета по порядку
-        var color = "red";
+        var color = colors[players.Count];
+        var name = names[players.Count];
 
         var playerScene = GD.Load<PackedScene>("res://src/components/player/player.tscn");
         var player = (Player)playerScene.Instantiate();
@@ -56,7 +64,7 @@ public partial class Playground : Node2D {
 
         var itemScene = GD.Load<PackedScene>("res://src/components/list/item/item.tscn");
         var item = (Item)itemScene.Instantiate();
-        item.name = "Player123"; // имя генерируем случайно
+        item.name = name; // имя генерируем случайно
         item.color = color;
 
         list.AddChild(item);

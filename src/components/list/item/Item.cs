@@ -9,6 +9,6 @@ public partial class Item : MarginContainer {
 
     public override void _Ready() {
         GetNode<Label>("Container/Label").Text = name;
-        GetNode<Sprite2D>("Container/Player").Modulate = new Color("#f14343");
+        GetNode<Sprite2D>("Container/Player").Modulate = Colors.Convert(color);
     }
 }
