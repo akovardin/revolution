@@ -3,15 +3,28 @@ using System;
 
 public class Point {
     public Vector2 point;
-    public int Chips;
 
     public Point(Vector2 point) {
         this.point = point;
     }
 }
 
+public class Interest {
+    // Описание точки интереса, которое покажется в диалоговом окне   
+    public String description;
+
+    // Клетка, куда должен будет перейти игрок после показа диалога 
+    public int cell = 0;
+
+    public Interest(String description, int cell) {
+        this.description = description;
+        this.cell = cell;
+    }
+}
+
 public partial class Board : Sprite2D {
     public Point[] Points = new Point[88];
+    public Interest[] Interests = new Interest[88];
     private Dice dice;
     private Player player;
 
@@ -127,7 +140,11 @@ public partial class Board : Sprite2D {
         Points[18] = new Point(new Vector2((vwidth / 2 - 950) + 1350, vheight / 2 - 485));
         Points[17] = new Point(new Vector2((vwidth / 2 - 950) + 1485, vheight / 2 - 485)); // 11
         
-        // нужно разметить все ячейки
+        // точки интереса
+        Interests[2] = new Interest(description: "Точка интереса", cell: 2);
+        Interests[4] = new Interest(description: "Точка интереса", cell: 4);
+        Interests[6] = new Interest(description: "Точка интереса", cell: 6);
+        Interests[8] = new Interest(description: "Точка интереса", cell: 8);
         
         GlobalPosition = new Vector2((vwidth / 2 - 150), vheight / 2);
     }

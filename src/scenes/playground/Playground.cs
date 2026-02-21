@@ -5,8 +5,8 @@ using Godot.Collections;
 
 public partial class Playground : Node2D {
     private Dice dice;
-    // private Player player;
     private Board board;
+    private Dialog dialog;
     private List list;
     private Add add;
     private Array<Player> players = new Array<Player>();
@@ -20,6 +20,7 @@ public partial class Playground : Node2D {
     override public void _Ready() {
         dice = GetNode<Dice>("Dice");
         board = GetNode<Board>("Board");
+        dialog = GetNode<Dialog>("Dialog");
 
         list = GetNode<List>("List");
         add = GetNode<Add>("Add");
@@ -29,15 +30,24 @@ public partial class Playground : Node2D {
     }
 
     public void OnDiceDropedEvent(int n) {
-        // player.Go(board.Points[player.Cell + (n-1)].point, n);
+        // на какую клетку нужно подвинуть игрока
         var point = players[currentPlayer].cell + (n-1);
 
-        GD.Print(currentPlayer);
-        GD.Print(point);
-        GD.Print(board.Points[point].point);
-
-
+        // перемещаем игрока на нужную точку
         players[currentPlayer].Go(board.Points[point].point, n);
+
+        // тут обрабатываем точку интереса
+        var interest = board.Interests[point]; 
+        if (interest != null) {
+            GD.Print("Interest: " + interest.description);
+            // показать нужно с задержкой
+            dialog.Show();
+        }
+
+        // проверяем заверщение игры
+
+
+        // если игра не закончилась, то передаем ход другому игроку
         currentPlayer++; // этот счетчик должен ходить по кругу
         if (currentPlayer >= players.Count) {
             currentPlayer = 0;

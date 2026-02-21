@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dad607hw4gwvf" path="res://src/components/board/board.tscn" id="2_laayb"]
 [ext_resource type="PackedScene" uid="uid://chl72ub7xo4nb" path="res://src/components/title/title.tscn" id="3_0tgao"]
 [ext_resource type="PackedScene" uid="uid://il07x608qkhp" path="res://src/components/list/list.tscn" id="5_bv52u"]
+[ext_resource type="Script" uid="uid://iut1onlmfchv" path="res://src/components/dialog/Dialog.cs" id="8_u0x5e"]
 [ext_resource type="PackedScene" uid="uid://bliysj2jsdv0w" path="res://src/components/player/player.tscn" id="9_4wepl"]
 [ext_resource type="PackedScene" uid="uid://5dk0imyjb0hm" path="res://src/components/dice/dice.tscn" id="14_q4obo"]
 [ext_resource type="PackedScene" uid="uid://dmqn7me6wkya6" path="res://src/components/add/add.tscn" id="15_q4obo"]
@@ -27,3 +28,12 @@ position = Vector2(376, 960)
 position = Vector2(1786, 936)
 
 [node name="Add" parent="." unique_id=1297588071 instance=ExtResource("15_q4obo")]
+
+[node name="Dialog" type="ColorRect" parent="." unique_id=449647151]
+visible = false
+offset_left = 312.0
+offset_top = 184.0
+offset_right = 1408.0
+offset_bottom = 864.0
+size_flags_horizontal = 4
+script = ExtResource("8_u0x5e")
